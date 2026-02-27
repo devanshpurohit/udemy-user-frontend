@@ -1,7 +1,7 @@
 // Configuration file for the application
 const config = {
   // API Configuration
-  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002/api',
+  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || 'https://udemy-latest-backend-1.onrender.com/api',
   
   // App Configuration
   APP_NAME: import.meta.env.VITE_APP_NAME || 'UDEMY Clone',

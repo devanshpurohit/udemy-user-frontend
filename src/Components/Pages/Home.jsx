@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { BiSolidBadgeCheck } from "react-icons/bi";
 import { FaCheck, FaQuoteRight } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import { getBackendUrl } from '../../config/backendConfig';
 
 import { useRef, useState, useEffect, useMemo } from 'react';
 
@@ -34,7 +35,7 @@ function Home() {
             console.log('🔍 Home: Fetching courses from API...');
             
             // Test API connectivity
-            const response = await fetch('http://localhost:5002/api/public/courses');
+            const response = await fetch('https://udemy-latest-backend-1.onrender.com/api/public/courses');
             console.log('🔍 Home: Response status:', response.status);
             console.log('🔍 Home: Response ok:', response.ok);
             

@@ -5,6 +5,7 @@ import { faUser, faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { BiSolidBadgeCheck } from 'react-icons/bi';
 import { FaCheck, FaQuoteRight } from 'react-icons/fa';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { getBackendUrl } from '../../config/backendConfig';
 
 // Import Components
 import TopLearningSlider from '../Sliders/TopLearningSlider';
@@ -56,7 +57,7 @@ const HomeSecond = () => {
             console.log('🔍 HomeSecond: Fetching courses from API...');
             
             // Test API connectivity
-            const response = await fetch('http://localhost:5002/api/public/courses');
+            const response = await fetch(getBackendUrl('/public/courses'));
             console.log('🔍 HomeSecond: Response status:', response.status);
             console.log('🔍 HomeSecond: Response ok:', response.ok);
             

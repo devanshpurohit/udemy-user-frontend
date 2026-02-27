@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getBackendUrl } from '../../config/backendConfig';
 import { Link } from 'react-router-dom';
 import { faStar, faClock, faUsers, faRupeeSign } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,8 +16,7 @@ function CoursesList() {
   const fetchCourses = async () => {
     try {
       setLoading(true);
-      console.log('🔍 Fetching courses from: http://localhost:5002/api/public/courses');
-      const response = await fetch('http://localhost:5002/api/public/courses');
+      const response = await fetch(getBackendUrl('/public/courses'));
       console.log('🔍 Response status:', response.status);
       const data = await response.json();
       console.log('🔍 Response data:', data);

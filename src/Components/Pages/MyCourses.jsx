@@ -2,7 +2,8 @@ import { faStar, faStarHalf, faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { MdChevronLeft } from "react-icons/md";
 import { MdChevronRight } from "react-icons/md";
-import { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { getBackendUrl } from '../../config/backendConfig';
 import CourseCard from '../Common/CourseCard';
 import { NavLink } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ function MyCourses() {
             setLoading(true);
             console.log('🔍 MyCourses: Fetching courses from API...');
             
-            const response = await fetch('http://localhost:5002/api/public/courses');
+            const response = await fetch('https://udemy-latest-backend-1.onrender.com/api/public/courses');
             console.log('🔍 MyCourses: Response status:', response.status);
             
             if (!response.ok) {
